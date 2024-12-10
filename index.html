@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Palace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        .nav a:hover {
+            background-color: white;
+            color: #28a745;
+        }
+        .filter {
+            margin: 20px;
+            text-align: center;
+        }
+        .filter select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #fff;
+            width: 200px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%; /* Ensures the image adjusts to the frame size */
+            height: 100%; /* Ensures the image adjusts to the frame size */
+            object-fit: cover; /* Ensures the image fills the frame without distortion */
+            border-radius: 5px; /* Optional: Rounded corners for the image */
+        }
+
+        .product .image-frame {
+            width: 200px; /* Set the desired frame width */
+            height: 200px; /* Set the desired frame height */
+            border: 2px solid #ddd; /* Frame border color and thickness */
+            border-radius: 10px; /* Optional: Rounded corners for the frame */
+            overflow: hidden; /* Ensures the image stays within the frame */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f9f9f9; /* Optional: Frame background color */
+            margin: 0 auto; /* Center the frame horizontally */
+        }
+
+        .product h3 {
+            font-size: 1.2em;
+        }
+        .product button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Farmer Palace</h1>
+        <nav class="nav">
+            <a href="admin.html">Admin Panel</a>
+        </nav>
+    </header>
+    <div class="filter">
+        <label for="category">Select Category:</label>
+        <select id="category" onchange="filterProducts()">
+            <option value="All">All</option>
+            <option value="Milk Products">Milk Products</option>
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+        </select>
+    </div>
+    <div class="product-container" id="product-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>
